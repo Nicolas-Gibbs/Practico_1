@@ -21,8 +21,8 @@ public class Startup
             options.AddPolicy("AllowEverything",builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
         });
         services.AddControllers();
-        services.AddScoped<IOrderRepository, OrderRepository>();
-        services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserService, UserService>();
         string directory = System.IO.Directory.GetCurrentDirectory();
         IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(directory)
